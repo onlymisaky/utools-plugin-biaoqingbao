@@ -1,7 +1,8 @@
+import { FaBiaoQing } from "./spider";
+
 declare global {
   interface Window {
-    value: string;
-    method(): void;
+    fba: FaBiaoQing;
   }
 }
 

@@ -3,12 +3,14 @@ import ReactDom from 'react-dom';
 
 class App extends React.Component {
 
-  handleClick() { 
-    window.method();
+  componentDidMount() {
+    window.fba.getList().then(response => {
+      console.log(response);
+    })
   }
 
   render() {
-    return <div onClick={this.handleClick}>{window.value}</div>
+    return (<div>666</div>)
   }
 }
 

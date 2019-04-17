@@ -1,7 +1,8 @@
+import { FaBiaoQing } from "./../preload/spider";
+
 declare global {
   interface Window {
-    value: string;
-    method(): void;
+    fba: FaBiaoQing;
   }
 }
 

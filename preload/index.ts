@@ -1,7 +1,3 @@
-const value = 'value';
-function method() {
-  console.log(value);
-}
+import { FaBiaoQing } from './spider';
 
-window.value = value;
-window.method = method;
+window.fba = new FaBiaoQing();

@@ -5,6 +5,9 @@
   "main": "index.html",
   "preload": "preload.js",
   "logo": "logo.png",
+  "development": {
+    "main": "http://localhost:5277/index.html"
+  },
   "features": [
     {
       "code": "bqb",
