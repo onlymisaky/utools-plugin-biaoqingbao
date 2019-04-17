@@ -1,0 +1,45 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+.main {
+  margin-bottom: 60px;
+}
+
+.picture-wallpaper {
+  width: 180px;
+  display: inline-block;
+  vertical-align: middle;
+  .picture {
+    display: block;
+    max-width: 166px;
+  }
+}
+
+.bottom-navigation {
+  height: 50px;
+  background-color: #ffffff;
+  display: flex;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  box-sizing: border-box;
+  border-top: 1px solid #f3f3f3;
+  .bottom-navigation-item {
+    cursor: pointer;
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    line-height: 50px;
+    color: #333;
+    text-decoration: none;
+    transition: all 0.3s;
+    &.selected {
+      color: #e49a66;
+    }
+    &:hover {
+      transform: scale(1.4);
+    }
+  }
+}
