@@ -12,6 +12,7 @@ interface IProps {
 export class ScrollList extends React.Component<IProps> {
 
   handleScroll(e: React.UIEvent<HTMLDivElement>) {
+    console.log(e);
     if (!this.props.finished) {
       this.props.onLoad(e);
     }

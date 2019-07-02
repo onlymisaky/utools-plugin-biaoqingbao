@@ -59,9 +59,9 @@ export class FaBiaoQing {
       })
   }
 
-  private getData($: CheerioStatic, $listWallpaper: Cheerio): Img[] {
+  private getData($: CheerioStatic, $listwrapper: Cheerio): Img[] {
     const data: Img[] = [];
-    $listWallpaper.each((index, ele) => {
+    $listwrapper.each((index, ele) => {
       const $img = $(ele).find('img');
       data.push({
         url: $img.data('original'),

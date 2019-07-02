@@ -6,3 +6,5 @@ export function img2Base64(img: HTMLImageElement) {
   ctx.drawImage(img, 0, 0, img.width, img.height);
   return canvas.toDataURL("image/png")
 }
+
+

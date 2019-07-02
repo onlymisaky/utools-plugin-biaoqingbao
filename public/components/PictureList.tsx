@@ -1,6 +1,6 @@
 import React from 'react';
+import { debounce } from 'lodash';
 import { Picture } from './Picture';
-import { ScrollList } from './ScrollList';
 
 interface IProps {
   data: Array<{
@@ -17,21 +17,37 @@ export class PictureList extends React.Component<IProps> {
     finished: false,
   }
 
+  handleScroll(e: Event) {
+    // console.log(`scrollHeight:`, window.scrollY, document.documentElement.scrollHeight, document.body.scrollHeight);
+    // console.log(`   scrollTop:`, window.pageYOffset, document.documentElement.scrollTop, document.body.scrollTop);
+    // console.log(`clientHeight:`, window.innerHeight, document.documentElement.clientHeight, document.body.clientHeight);
+  }
+
+  debounceScroll!: (e: Event) => void;
+
+
   handleLoad(e: React.MouseEvent) {
     console.log(e);
   }
 
   render() {
     return (
-      <ScrollList
-        onLoad={this.handleLoad.bind(this)}
-        finished={this.state.finished}>
+      <div className="picture-list">
         {this.props.data.map(item => {
           return (
             <Picture url={item.url} name={item.name} key={item.name} />
           )
         })}
-      </ScrollList>
+      </div>
     );
+  }
+
+  componentDidMount() {
+    this.debounceScroll = debounce(this.handleScroll, 1000);
+    window.addEventListener('scroll', this.debounceScroll);
+  }
+
+  componentWillUnmount() {
+    document.body.removeEventListener('scroll', this.debounceScroll);
   }
 }
